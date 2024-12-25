@@ -1,0 +1,80 @@
+{
+  "settings": {
+    "index": {
+      "max_ngram_diff": 20,
+      "analysis": {
+        "tokenizer": {
+          "ngram_tokenizer": {
+            "type": "ngram",
+            "min_gram": 1,
+            "max_gram": 20,
+            "token_chars": [
+              "letter",
+              "digit"
+            ]
+          }
+        },
+        "analyzer": {
+          "custom_index_analyzer": {
+            "type": "custom",
+            "tokenizer": "ngram_tokenizer",
+            "filter": [
+              "lowercase"
+            ]
+          },
+          "custom_search_analyzer": {
+            "type": "custom",
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "date": {
+        "type": "text",
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "code": {
+        "type": "text",
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "city": {
+        "type": "text",
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "time": {
+        "type": "text",
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "tarif": {
+        "type": "text", 
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "PhoneNumber": {
+        "type": "text",
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "PhoneAbonents": {
+        "type": "text", 
+        "analyzer": "custom_index_analyzer",
+        "search_analyzer": "custom_search_analyzer"
+      },
+      "is_float": {
+        "type": "integer"
+      }
+    }
+  }
+}
+
+

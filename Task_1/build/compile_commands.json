@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/customer.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/customer.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/customer.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/file.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/file.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/file.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/input.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/input.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/input.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/main.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/main.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/main.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/menu.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/menu.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/menu.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/print.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/print.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/print.c"
+},
+{
+  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build",
+  "command": "/usr/bin/cc  -I/usr/include/json-c -g -std=gnu99 -o CMakeFiles/task1.dir/elastic.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/elastic.c",
+  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/elastic.c"
+}
+]

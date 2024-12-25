@@ -1,0 +1,3 @@
+/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles/task2.dir
+/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles/edit_cache.dir
+/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles/rebuild_cache.dir
