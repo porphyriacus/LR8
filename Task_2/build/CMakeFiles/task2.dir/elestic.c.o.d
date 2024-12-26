@@ -100,4 +100,4 @@ CMakeFiles/task2.dir/elestic.c.o: \
  /usr/include/json-c/json_pointer.h /usr/include/json-c/json_tokener.h \
  /usr/include/json-c/json_util.h /usr/include/json-c/linkhash.h \
  /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/header.h \
- /usr/include/string.h /usr/include/strings.h
+ /usr/include/string.h /usr/include/strings.h /usr/include/ctype.h

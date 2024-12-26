@@ -178,7 +178,8 @@ CMakeFiles/task2.dir/elestic.c.o: ../elestic.c \
   /usr/include/json-c/linkhash.h \
   ../header.h \
   /usr/include/string.h \
-  /usr/include/strings.h
+  /usr/include/strings.h \
+  /usr/include/ctype.h
 
 CMakeFiles/task2.dir/file.c.o: ../file.c \
   /usr/include/stdc-predef.h \

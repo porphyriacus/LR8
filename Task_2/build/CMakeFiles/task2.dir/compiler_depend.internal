@@ -181,6 +181,7 @@ CMakeFiles/task2.dir/elestic.c.o
  /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/header.h
  /usr/include/string.h
  /usr/include/strings.h
+ /usr/include/ctype.h
 
 CMakeFiles/task2.dir/file.c.o
  /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/file.c

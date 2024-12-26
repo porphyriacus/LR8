@@ -2,17 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "header.h"
-
-#define NUM_CALLS 100 // максимальное количество записей в массиве calls
+#define MAX_UNIQUE_CITIES 100
+#define NUM_CALLS 100 // Предположительное количество звонков
 
 calls *addCall(const char *filename, calls *, int *);
 calls *removeCall(const char *filename, calls *, int *, int);
 void modifyCalls(const char *filename, calls *, int);
 calls *createArray(const char *filename, int);
 void calculateTotals(calls *call, int);
-
-
-#define MAX_UNIQUE_CITIES 100
 
 typedef struct {
     char city[20];
@@ -55,8 +52,6 @@ void inputCityAndCode(calls *call) {
     }
 }
 
-
-
 void createCityCodeArray(calls *callList, int size) {
     uniqueCityCount = 0;
     for (int i = 0; i < size; i++) {
@@ -75,8 +70,6 @@ void createCityCodeArray(calls *callList, int size) {
     }
 }
 
-
-
 calls* createArray(const char *filename, int size) {
     FILE *file = fopen(filename, "r+");
     if (file == NULL) {
@@ -85,35 +78,31 @@ calls* createArray(const char *filename, int size) {
     }
 
     calls *call = (calls *)malloc(size * sizeof(calls));
-    char uniqueCities[100][20]; // Массив для хранения уникальных городов
-    char uniqueCodes[100][20]; // Массив для хранения кодов уникальных городов
-    int uniqueCount = 0; // Количество уникальных городов
+    if (call == NULL) {
+        perror("Ошибка выделения памяти");
+        fclose(file);
+        return NULL;
+    }
 
     for (int i = 0; i < size; i++) {
         printf("Введите информацию про звонок номер %d\n", i + 1);
-        printf("Введите дату разговора:\n");
-        input_date(call[i].date, sizeof(call[i].date));
-        
+        printf("Введите день:\n");
+        call[i].day = input(0, 32);
+        printf("Введите месяц:\n");
+        call[i].month = input(0, 13);
+        printf("Введите год (от 1900 до 2024 включительно):\n");
+        call[i].year = input(1899, 2025);
+
         printf("Введите город:\n");
         input_char(call[i].city, sizeof(call[i].city));
         
-        // Проверка на уникальность города
-        int cityExists = 0;
-        for (int j = 0; j < uniqueCount; j++) {
-            if (strcmp(call[i].city, uniqueCities[j]) == 0) {
-                strcpy(call[i].code, uniqueCodes[j]);
-                cityExists = 1;
-                break;
-            }
-        }
-
-        // Если город не найден, запрос кода города и сохранение уникального города и кода
-        if (!cityExists) {
+        const char *existingCode = getCityCode(call[i].city);
+        if (existingCode) {
+            strcpy(call[i].code, existingCode);
+        } else {
             printf("Введите код города (состоит из чисел):\n");
             input_numb(call[i].code, sizeof(call[i].code));
-            strcpy(uniqueCities[uniqueCount], call[i].city);
-            strcpy(uniqueCodes[uniqueCount], call[i].code);
-            uniqueCount++;
+            addCityCode(call[i].city, call[i].code);
         }
 
         printf("Введите время разговора (в мин):\n");
@@ -141,6 +130,8 @@ calls* createArray(const char *filename, int size) {
     fclose(file);
     return call;
 }
+
+// Функция для добавления нового звонка
 calls* addCall(const char *filename, calls *call, int *size) {
     FILE *file = fopen(filename, "r+");
     if (file == NULL) {
@@ -160,10 +151,14 @@ calls* addCall(const char *filename, calls *call, int *size) {
     }
 
     int i = *size - 1;
-    printf("Введите информацию про клиента номер %d\n", i + 1);
     printf("Введите информацию про звонок номер %d\n", i + 1);
-    printf("Введите дату разговора:\n");
-    input_date(call[i].date, sizeof(call[i].date));
+
+    printf("Введите день:\n");
+    call[i].day = input(0, 32);
+    printf("Введите месяц:\n");
+    call[i].month = input(0, 13);
+    printf("Введите год (от 1900 до 2024 включительно):\n");
+    call[i].year = input(1899, 2025);
 
     inputCityAndCode(&call[i]);
 
@@ -187,23 +182,19 @@ calls* addCall(const char *filename, calls *call, int *size) {
     printf("Введите номер абонента:\n");
     input_numb(call[i].PhoneAbonents, sizeof(call[i].PhoneAbonents));
 
-    writeSingleCallToFile(file, call[i]);
+     File_Enter(filename, call, *size);
     fclose(file);
     return call;
 }
 
-
-typedef int (*cmp_func)(const calls *, const void *);
-calls *removeCall(const char *filename, calls *call, int *size, int index)
-{
-    for (int i = index; i < *size - 1; i++)
-    {
+// Функция для удаления звонка
+calls* removeCall(const char *filename, calls *call, int *size, int index) {
+    for (int i = index; i < *size - 1; i++) {
         call[i] = call[i + 1];
     }
     *size -= 1;
     call = (calls *)realloc(call, (*size) * sizeof(calls));
-    if (call == NULL && *size > 0)
-    {
+    if (call == NULL && *size > 0) {
         printf("Memory allocation failed!\n");
         exit(1);
     }
@@ -213,8 +204,15 @@ calls *removeCall(const char *filename, calls *call, int *size, int index)
 }
 
 // Функция для изменения поля структуры клиента в файле и массиве
-void modifyCalls(const char *filename, calls *call, int ind)
-{
+void modifyCalls(const char *filename, calls *call, int size) {
+
+    printf("Список покупателей по номеру абонента:\n");
+    for (int i = 0; i < size; ++i)
+    {
+        printf("%d. %s\n", i + 1, call[i].PhoneAbonents);
+    }
+    printf("Введите номер абонента, информацию про звонок, которого вы бы хотели изменить:\n");
+    int ind = input(0, size + 1);
     FILE *file = fopen(filename, "r+");
     printf("выберите поле для изменения:\n");
     printf("1. дата\n");
@@ -224,98 +222,67 @@ void modifyCalls(const char *filename, calls *call, int ind)
     printf("5. тариф\n");
     printf("6. номер города\n");
     printf("7. номер абонента\n");
-    int choice = input(1, 7); // получает выбор пользователя
+    int choice = input(1, 8); // получает выбор пользователя
 
     calls *ca = &call[ind - 1];
 
-    switch (choice)
-    { // выбирает поле для изменения на основе ввода пользователя
+    switch (choice) { // выбирает поле для изменения на основе ввода пользователя
     case 1:
-    {
-        printf("введите другую дату: ");
-        char data[12];
-        input_date(data, sizeof(data));
-        strcpy(call->date, data); // обновляет поле в массиве структур
+        printf("Введите другой день:\n");
+        ca->day = input(0, 32);
+        printf("Введите другой месяц:\n");
+        ca->month = input(0, 13);
+        printf("Введите другой год (от 1900 до 2024 включительно):\n");
+        ca->year = input(1899, 2025);
         break;
-    }
     case 2:
-    {
-        printf("введите новый код города: ");
-        char citycode[20];
-        input_numb(citycode, sizeof(citycode));
-
-        strcpy(call->code, citycode); // обновляет поле в массиве структур
+        printf("Введите новый код города:\n");
+        input_numb(ca->code, sizeof(ca->code));
         break;
-    }
     case 3:
-    {
-        printf("введите другой город: ");
-        char town[20];
-        input_char(town, sizeof(town));
-
-        strcpy(call->city, town); // обновляет поле в массиве структур
+        printf("Введите другой город:\n");
+        input_char(ca->city, sizeof(ca->city));
         break;
-    }
     case 4:
-    {
-        printf("введите другое время разговора: ");
-        float min = Finput(0, 10000.0);
-
-        call->time = min; // обновляет поле в массиве структур
+        printf("Введите другое время разговора:\n");
+        ca->time = Finput(0, 10000.0);
         break;
-    }
     case 5:
-    {
-        printf("введите новый тариф: ");
+        printf("Введите новый тариф:\n");
         float s = Finput(0.0, 100.0);
         int ss = (int)s;
-        if (ss == s)
-        {
-            call->tarif.intV = ss;
-            call->is_float = 0;
+        if (ss == s) {
+            ca->tarif.intV = ss;
+            ca->is_float = 0;
+        } else {
+            ca->tarif.floatV = s;
+            ca->is_float = 1;
         }
-        else
-        {
-            call->tarif.floatV = s;
-            call->is_float = 1;
-        }
-
         break;
-    }
     case 6:
-    {
-        printf("введите новый номер горрода: ");
-        char numb[13];
-        input_numb(numb, sizeof(numb));
-
-        strcpy(call->PhoneNumber, numb); // обновляет поле в массиве структур
+        printf("Введите новый номер города:\n");
+        input_numb(ca->PhoneNumber, sizeof(ca->PhoneNumber));
         break;
-    }
     case 7:
-    {
-        printf("введите новый номер горрода: ");
-        char number[13];
-        input_numb(number, sizeof(number));
-
-        strcpy(call->PhoneAbonents, number); // обновляет поле в массиве структур
+        printf("Введите новый номер абонента:\n");
+        input_numb(ca->PhoneAbonents, sizeof(ca->PhoneAbonents));
         break;
-    }
     default:
         printf("некорректный выбор\n");
         break;
     }
-    writeSingleCallToFile(file, *ca);
+
+    File_Enter(filename, call, size);
     fclose(file);
 }
 
+
+// Функция для вычисления общего времени и суммы по городам
 void calculateTotals(calls *call, int num_calls)
 {
-
-    // Создание массива уникальных городов
     char cities[NUM_CALLS][20];
     int city_count = 0;
 
-    // Временные массивы для хранения общего времени и суммы
     float total_time[NUM_CALLS] = {0};
     float total_sum[NUM_CALLS] = {0};
 
@@ -323,7 +290,6 @@ void calculateTotals(calls *call, int num_calls)
     {
         int city_index = -1;
 
-        // Поиск индекса города в массиве уникальных городов
         for (int j = 0; j < city_count; j++)
         {
             if (strcmp(cities[j], call[i].city) == 0)
@@ -333,7 +299,6 @@ void calculateTotals(calls *call, int num_calls)
             }
         }
 
-        // Если город не найден, добавляем его в массив уникальных городов
         if (city_index == -1)
         {
             strcpy(cities[city_count], call[i].city);
@@ -341,7 +306,6 @@ void calculateTotals(calls *call, int num_calls)
             city_count++;
         }
 
-        // Суммируем время и стоимость звонков для города
         total_time[city_index] += call[i].time;
         if (call[i].is_float)
         {
@@ -353,19 +317,23 @@ void calculateTotals(calls *call, int num_calls)
         }
     }
 
-    // Вывод результатов
     for (int i = 0; i < city_count; i++)
     {
         printf("Город: %s, Общее время разговоров: %.2f, Сумма: %.2f\n", cities[i], total_time[i], total_sum[i]);
     }
 }
 
+// Функции сравнения для различных полей
 typedef int (*cmp_func)(const calls *, const void *);
 
-// Функции сравнения для различных полей
 int cmp_date(const calls *call, const void *value)
 {
-    return strcmp(call->date, (const char *)value);
+    const calls *target = (const calls *)value;
+    if (call->year == target->year && call->month == target->month && call->day == target->day)
+    {
+        return 0;
+    }
+    return 1;
 }
 
 int cmp_code(const calls *call, const void *value)
@@ -427,6 +395,7 @@ calls *removeCallsByField(calls *callList, int *size, cmp_func cmp, const void *
     File_Enter(filename, callList, *size);
     return callList;
 }
+
 void removeByField(calls **callList, int *size)
 {
     if (*callList != NULL)
@@ -440,7 +409,7 @@ void removeByField(calls **callList, int *size)
         printf("6. Номер города\n");
         printf("7. Номер абонента\n");
 
-        int choice = input(1, 7); // Функция для ввода выбора пользователя
+        int choice = input(1, 8); // Функция для ввода выбора пользователя
 
         void *value;
         char strValue[20];
@@ -451,11 +420,16 @@ void removeByField(calls **callList, int *size)
         switch (choice)
         {
         case 1:
-            printf("Введите дату: ");
-            input_date(strValue, sizeof(strValue));
-            value = strValue;
+        {
+            printf("Введите день, месяц и год:\n");
+            calls target;
+            target.day = input(0, 32);
+            target.month = input(0, 13);
+            target.year = input(1899, 2025);
+            value = &target;
             cmp = cmp_date;
             break;
+        }
         case 2:
             printf("Введите код города: ");
             input_numb(strValue, sizeof(strValue));

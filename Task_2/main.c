@@ -24,6 +24,7 @@ int main()
         else
         {
             printf("У вас уже имеется список звонков. Можете использовать его или создать новый список.\n");
+            //uploadAllcalls(call, size);
         }
     }
 
@@ -81,15 +82,10 @@ int main()
 
             // Загрузка всех клиентов на сервер
             uploadAllcalls(call, size);
-            const char *field = chooseField();
-            // Пример использования обновленной функции поиска
-            printf("Введите запрос для поиска клиентов: ");
-            char query[256];
+            char query[1024];
+            printf("Введите поисковый запрос: ");
             scanf("%s", query);
-            if (field != NULL)
-            {
-                searchInElasticSearch(field, query);
-            }
+            searchInElasticSearch(query);
 
             // Удаление всех клиентов с сервера
             deleteAllcalls();

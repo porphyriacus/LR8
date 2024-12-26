@@ -35,10 +35,14 @@
   },
   "mappings": {
     "properties": {
-      "date": {
-        "type": "text",
-        "analyzer": "custom_index_analyzer",
-        "search_analyzer": "custom_search_analyzer"
+      "day": {
+        "type": "integer"
+      },
+      "month": {
+        "type": "integer"
+      },
+      "year": {
+        "type": "integer"
       },
       "code": {
         "type": "text",
@@ -51,14 +55,10 @@
         "search_analyzer": "custom_search_analyzer"
       },
       "time": {
-        "type": "text",
-        "analyzer": "custom_index_analyzer",
-        "search_analyzer": "custom_search_analyzer"
+        "type": "float"
       },
       "tarif": {
-        "type": "text", 
-        "analyzer": "custom_index_analyzer",
-        "search_analyzer": "custom_search_analyzer"
+        "type": "float"
       },
       "PhoneNumber": {
         "type": "text",
@@ -66,7 +66,7 @@
         "search_analyzer": "custom_search_analyzer"
       },
       "PhoneAbonents": {
-        "type": "text", 
+        "type": "text",
         "analyzer": "custom_index_analyzer",
         "search_analyzer": "custom_search_analyzer"
       },
@@ -76,5 +76,4 @@
     }
   }
 }
-
 
