@@ -197,18 +197,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//The directory containing a CMake configuration file for CURL.
-CURL_DIR:PATH=CURL_DIR-NOTFOUND
-
-//Path to a file.
-CURL_INCLUDE_DIR:PATH=/usr/include/x86_64-linux-gnu
-
-//Path to a library.
-CURL_LIBRARY_DEBUG:FILEPATH=CURL_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-CURL_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
-
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 
@@ -216,10 +204,13 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a library.
+pkgcfg_lib_CURL_curl:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
+
+//Path to a library.
 pkgcfg_lib_JSONC_json-c:FILEPATH=/usr/lib/x86_64-linux-gnu/libjson-c.so
 
 //Path to a library.
-pkgcfg_lib_PC_CURL_curl:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
+pkgcfg_lib_UUID_uuid:FILEPATH=/usr/lib/x86_64-linux-gnu/libuuid.so
 
 //Value Computed by CMake
 task1_BINARY_DIR:STATIC=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build
@@ -360,16 +351,41 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_DIR
-CURL_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_INCLUDE_DIR
-CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_LIBRARY_DEBUG
-CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_LIBRARY_RELEASE
-CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//Details about finding CURL
-FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.81.0()]
+CURL_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+CURL_CFLAGS_I:INTERNAL=
+CURL_CFLAGS_OTHER:INTERNAL=
+CURL_FOUND:INTERNAL=1
+CURL_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+CURL_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+CURL_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lcurl
+CURL_LDFLAGS_OTHER:INTERNAL=
+CURL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+CURL_LIBRARIES:INTERNAL=curl
+CURL_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+CURL_LIBS:INTERNAL=
+CURL_LIBS_L:INTERNAL=
+CURL_LIBS_OTHER:INTERNAL=
+CURL_LIBS_PATHS:INTERNAL=
+CURL_MODULE_NAME:INTERNAL=libcurl
+CURL_PREFIX:INTERNAL=/usr
+CURL_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+CURL_STATIC_CFLAGS_I:INTERNAL=
+CURL_STATIC_CFLAGS_OTHER:INTERNAL=
+CURL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+CURL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu/mit-krb5;-lcurl;-lnghttp2;-lidn2;-lrtmp;-lssh;-lpsl;-lssl;-lcrypto;-lssl;-lcrypto;-lgssapi_krb5;-llber;-lldap;-llber;-lzstd;-lbrotlidec;-lz
+CURL_STATIC_LDFLAGS_OTHER:INTERNAL=
+CURL_STATIC_LIBDIR:INTERNAL=
+CURL_STATIC_LIBRARIES:INTERNAL=curl;nghttp2;idn2;rtmp;ssh;psl;ssl;crypto;ssl;crypto;gssapi_krb5;lber;ldap;lber;zstd;brotlidec;z
+CURL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu/mit-krb5
+CURL_STATIC_LIBS:INTERNAL=
+CURL_STATIC_LIBS_L:INTERNAL=
+CURL_STATIC_LIBS_OTHER:INTERNAL=
+CURL_STATIC_LIBS_PATHS:INTERNAL=
+CURL_VERSION:INTERNAL=7.81.0
+CURL_libcurl_INCLUDEDIR:INTERNAL=
+CURL_libcurl_LIBDIR:INTERNAL=
+CURL_libcurl_PREFIX:INTERNAL=
+CURL_libcurl_VERSION:INTERNAL=
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.2()]
 JSONC_CFLAGS:INTERNAL=-I/usr/include/json-c
@@ -407,52 +423,56 @@ JSONC_json-c_INCLUDEDIR:INTERNAL=
 JSONC_json-c_LIBDIR:INTERNAL=
 JSONC_json-c_PREFIX:INTERNAL=
 JSONC_json-c_VERSION:INTERNAL=
-PC_CURL_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-PC_CURL_CFLAGS_I:INTERNAL=
-PC_CURL_CFLAGS_OTHER:INTERNAL=
-PC_CURL_FOUND:INTERNAL=1
-PC_CURL_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-PC_CURL_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-PC_CURL_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lcurl
-PC_CURL_LDFLAGS_OTHER:INTERNAL=
-PC_CURL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-PC_CURL_LIBRARIES:INTERNAL=curl
-PC_CURL_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
-PC_CURL_LIBS:INTERNAL=
-PC_CURL_LIBS_L:INTERNAL=
-PC_CURL_LIBS_OTHER:INTERNAL=
-PC_CURL_LIBS_PATHS:INTERNAL=
-PC_CURL_MODULE_NAME:INTERNAL=libcurl
-PC_CURL_PREFIX:INTERNAL=/usr
-PC_CURL_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-PC_CURL_STATIC_CFLAGS_I:INTERNAL=
-PC_CURL_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_CURL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-PC_CURL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu/mit-krb5;-lcurl;-lnghttp2;-lidn2;-lrtmp;-lssh;-lpsl;-lssl;-lcrypto;-lssl;-lcrypto;-lgssapi_krb5;-llber;-lldap;-llber;-lzstd;-lbrotlidec;-lz
-PC_CURL_STATIC_LDFLAGS_OTHER:INTERNAL=
-PC_CURL_STATIC_LIBDIR:INTERNAL=
-PC_CURL_STATIC_LIBRARIES:INTERNAL=curl;nghttp2;idn2;rtmp;ssh;psl;ssl;crypto;ssl;crypto;gssapi_krb5;lber;ldap;lber;zstd;brotlidec;z
-PC_CURL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu/mit-krb5
-PC_CURL_STATIC_LIBS:INTERNAL=
-PC_CURL_STATIC_LIBS_L:INTERNAL=
-PC_CURL_STATIC_LIBS_OTHER:INTERNAL=
-PC_CURL_STATIC_LIBS_PATHS:INTERNAL=
-PC_CURL_VERSION:INTERNAL=7.81.0
-PC_CURL_libcurl_INCLUDEDIR:INTERNAL=
-PC_CURL_libcurl_LIBDIR:INTERNAL=
-PC_CURL_libcurl_PREFIX:INTERNAL=
-PC_CURL_libcurl_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+UUID_CFLAGS:INTERNAL=-I/usr/include/uuid
+UUID_CFLAGS_I:INTERNAL=
+UUID_CFLAGS_OTHER:INTERNAL=
+UUID_FOUND:INTERNAL=1
+UUID_INCLUDEDIR:INTERNAL=/usr/include
+UUID_INCLUDE_DIRS:INTERNAL=/usr/include/uuid
+UUID_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-luuid
+UUID_LDFLAGS_OTHER:INTERNAL=
+UUID_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+UUID_LIBRARIES:INTERNAL=uuid
+UUID_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+UUID_LIBS:INTERNAL=
+UUID_LIBS_L:INTERNAL=
+UUID_LIBS_OTHER:INTERNAL=
+UUID_LIBS_PATHS:INTERNAL=
+UUID_MODULE_NAME:INTERNAL=uuid
+UUID_PREFIX:INTERNAL=/usr
+UUID_STATIC_CFLAGS:INTERNAL=-I/usr/include/uuid
+UUID_STATIC_CFLAGS_I:INTERNAL=
+UUID_STATIC_CFLAGS_OTHER:INTERNAL=
+UUID_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/uuid
+UUID_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-luuid
+UUID_STATIC_LDFLAGS_OTHER:INTERNAL=
+UUID_STATIC_LIBDIR:INTERNAL=
+UUID_STATIC_LIBRARIES:INTERNAL=uuid
+UUID_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+UUID_STATIC_LIBS:INTERNAL=
+UUID_STATIC_LIBS_L:INTERNAL=
+UUID_STATIC_LIBS_OTHER:INTERNAL=
+UUID_STATIC_LIBS_PATHS:INTERNAL=
+UUID_VERSION:INTERNAL=2.37.2
+UUID_uuid_INCLUDEDIR:INTERNAL=
+UUID_uuid_LIBDIR:INTERNAL=
+UUID_uuid_PREFIX:INTERNAL=
+UUID_uuid_VERSION:INTERNAL=
+__pkg_config_arguments_CURL:INTERNAL=REQUIRED;libcurl
 __pkg_config_arguments_JSONC:INTERNAL=REQUIRED;json-c
-__pkg_config_arguments_PC_CURL:INTERNAL=QUIET;libcurl
+__pkg_config_arguments_UUID:INTERNAL=REQUIRED;uuid
+__pkg_config_checked_CURL:INTERNAL=1
 __pkg_config_checked_JSONC:INTERNAL=1
-__pkg_config_checked_PC_CURL:INTERNAL=1
+__pkg_config_checked_UUID:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_CURL_curl
+pkgcfg_lib_CURL_curl-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_JSONC_json-c
 pkgcfg_lib_JSONC_json-c-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
-pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_UUID_uuid
+pkgcfg_lib_UUID_uuid-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

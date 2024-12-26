@@ -3,20 +3,19 @@
 
 #include <stdio.h>
 #include <string.h>
-
-typedef union {
-    int intV;
-    float floatV;
-} discountType;
-
+#define BUFFER_SIZE 1024
 typedef struct {
+    char uuid[37]; // уникальный UUID (36 символов + терминальный ноль)
     char name[50];
     char surname[50];
     char fathername[50];
-    short sex;
+    int sex;
     int age;
     char address[100];
-    discountType discount;
+    union {
+        int intV;
+        float floatV;
+    } discount;
     int is_float;
 } RegCustomers;
 
@@ -41,12 +40,14 @@ void File_Enter(FILE *, RegCustomers*, int) ;
 void ChangeBin(FILE *, RegCustomers, int );
 void deleteCustomerByIndex(FILE*, int);
 
+
+RegCustomers *removeCustomerByUUID(FILE*, RegCustomers *, int *, const char *);
+size_t WriteCallback(void *contents, size_t , size_t, void *);
 void customerToJson(RegCustomers *, char *);
 void sendToElasticSearch(char *);
 void deleteAllCustomers();
+void searchInElasticSearch(const char *);
 void uploadAllCustomers(RegCustomers *, int);
-size_t WriteCallback(void *, size_t , size_t , void *);
-void searchInElasticSearch(const char *, const char *);
-const char* chooseField();
+void RegCustomersToJson(RegCustomers *, char *);
 
 #endif 

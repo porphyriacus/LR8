@@ -98,4 +98,5 @@ CMakeFiles/task1.dir/main.c.o: \
  /usr/include/json-c/json_object_iterator.h \
  /usr/include/json-c/json_pointer.h /usr/include/json-c/json_tokener.h \
  /usr/include/json-c/json_util.h /usr/include/json-c/linkhash.h \
- /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/header.h
+ /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/header.h \
+ /usr/include/ctype.h

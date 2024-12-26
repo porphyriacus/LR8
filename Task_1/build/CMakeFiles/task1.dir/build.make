@@ -83,38 +83,10 @@ CMakeFiles/task1.dir/customer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/customer.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/customer.c -o CMakeFiles/task1.dir/customer.c.s
 
-CMakeFiles/task1.dir/file.c.o: CMakeFiles/task1.dir/flags.make
-CMakeFiles/task1.dir/file.c.o: ../file.c
-CMakeFiles/task1.dir/file.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/task1.dir/file.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/file.c.o -MF CMakeFiles/task1.dir/file.c.o.d -o CMakeFiles/task1.dir/file.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/file.c
-
-CMakeFiles/task1.dir/file.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1.dir/file.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/file.c > CMakeFiles/task1.dir/file.c.i
-
-CMakeFiles/task1.dir/file.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/file.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/file.c -o CMakeFiles/task1.dir/file.c.s
-
-CMakeFiles/task1.dir/input.c.o: CMakeFiles/task1.dir/flags.make
-CMakeFiles/task1.dir/input.c.o: ../input.c
-CMakeFiles/task1.dir/input.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/task1.dir/input.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/input.c.o -MF CMakeFiles/task1.dir/input.c.o.d -o CMakeFiles/task1.dir/input.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/input.c
-
-CMakeFiles/task1.dir/input.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1.dir/input.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/input.c > CMakeFiles/task1.dir/input.c.i
-
-CMakeFiles/task1.dir/input.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/input.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/input.c -o CMakeFiles/task1.dir/input.c.s
-
 CMakeFiles/task1.dir/main.c.o: CMakeFiles/task1.dir/flags.make
 CMakeFiles/task1.dir/main.c.o: ../main.c
 CMakeFiles/task1.dir/main.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/task1.dir/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/task1.dir/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/main.c.o -MF CMakeFiles/task1.dir/main.c.o.d -o CMakeFiles/task1.dir/main.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/main.c
 
 CMakeFiles/task1.dir/main.c.i: cmake_force
@@ -125,72 +97,19 @@ CMakeFiles/task1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/main.c -o CMakeFiles/task1.dir/main.c.s
 
-CMakeFiles/task1.dir/menu.c.o: CMakeFiles/task1.dir/flags.make
-CMakeFiles/task1.dir/menu.c.o: ../menu.c
-CMakeFiles/task1.dir/menu.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/task1.dir/menu.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/menu.c.o -MF CMakeFiles/task1.dir/menu.c.o.d -o CMakeFiles/task1.dir/menu.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/menu.c
-
-CMakeFiles/task1.dir/menu.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1.dir/menu.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/menu.c > CMakeFiles/task1.dir/menu.c.i
-
-CMakeFiles/task1.dir/menu.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/menu.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/menu.c -o CMakeFiles/task1.dir/menu.c.s
-
-CMakeFiles/task1.dir/print.c.o: CMakeFiles/task1.dir/flags.make
-CMakeFiles/task1.dir/print.c.o: ../print.c
-CMakeFiles/task1.dir/print.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/task1.dir/print.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/print.c.o -MF CMakeFiles/task1.dir/print.c.o.d -o CMakeFiles/task1.dir/print.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/print.c
-
-CMakeFiles/task1.dir/print.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1.dir/print.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/print.c > CMakeFiles/task1.dir/print.c.i
-
-CMakeFiles/task1.dir/print.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/print.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/print.c -o CMakeFiles/task1.dir/print.c.s
-
-CMakeFiles/task1.dir/elastic.c.o: CMakeFiles/task1.dir/flags.make
-CMakeFiles/task1.dir/elastic.c.o: ../elastic.c
-CMakeFiles/task1.dir/elastic.c.o: CMakeFiles/task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/task1.dir/elastic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/task1.dir/elastic.c.o -MF CMakeFiles/task1.dir/elastic.c.o.d -o CMakeFiles/task1.dir/elastic.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/elastic.c
-
-CMakeFiles/task1.dir/elastic.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/task1.dir/elastic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/elastic.c > CMakeFiles/task1.dir/elastic.c.i
-
-CMakeFiles/task1.dir/elastic.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/task1.dir/elastic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/elastic.c -o CMakeFiles/task1.dir/elastic.c.s
-
 # Object files for target task1
 task1_OBJECTS = \
 "CMakeFiles/task1.dir/customer.c.o" \
-"CMakeFiles/task1.dir/file.c.o" \
-"CMakeFiles/task1.dir/input.c.o" \
-"CMakeFiles/task1.dir/main.c.o" \
-"CMakeFiles/task1.dir/menu.c.o" \
-"CMakeFiles/task1.dir/print.c.o" \
-"CMakeFiles/task1.dir/elastic.c.o"
+"CMakeFiles/task1.dir/main.c.o"
 
 # External object files for target task1
 task1_EXTERNAL_OBJECTS =
 
 task1: CMakeFiles/task1.dir/customer.c.o
-task1: CMakeFiles/task1.dir/file.c.o
-task1: CMakeFiles/task1.dir/input.c.o
 task1: CMakeFiles/task1.dir/main.c.o
-task1: CMakeFiles/task1.dir/menu.c.o
-task1: CMakeFiles/task1.dir/print.c.o
-task1: CMakeFiles/task1.dir/elastic.c.o
 task1: CMakeFiles/task1.dir/build.make
-task1: /usr/lib/x86_64-linux-gnu/libcurl.so
 task1: CMakeFiles/task1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable task1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable task1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/task1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

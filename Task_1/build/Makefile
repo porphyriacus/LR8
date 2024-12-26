@@ -153,78 +153,6 @@ customer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/customer.c.s
 .PHONY : customer.c.s
 
-elastic.o: elastic.c.o
-.PHONY : elastic.o
-
-# target to build an object file
-elastic.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/elastic.c.o
-.PHONY : elastic.c.o
-
-elastic.i: elastic.c.i
-.PHONY : elastic.i
-
-# target to preprocess a source file
-elastic.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/elastic.c.i
-.PHONY : elastic.c.i
-
-elastic.s: elastic.c.s
-.PHONY : elastic.s
-
-# target to generate assembly for a file
-elastic.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/elastic.c.s
-.PHONY : elastic.c.s
-
-file.o: file.c.o
-.PHONY : file.o
-
-# target to build an object file
-file.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/file.c.o
-.PHONY : file.c.o
-
-file.i: file.c.i
-.PHONY : file.i
-
-# target to preprocess a source file
-file.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/file.c.i
-.PHONY : file.c.i
-
-file.s: file.c.s
-.PHONY : file.s
-
-# target to generate assembly for a file
-file.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/file.c.s
-.PHONY : file.c.s
-
-input.o: input.c.o
-.PHONY : input.o
-
-# target to build an object file
-input.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/input.c.o
-.PHONY : input.c.o
-
-input.i: input.c.i
-.PHONY : input.i
-
-# target to preprocess a source file
-input.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/input.c.i
-.PHONY : input.c.i
-
-input.s: input.c.s
-.PHONY : input.s
-
-# target to generate assembly for a file
-input.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/input.c.s
-.PHONY : input.c.s
-
 main.o: main.c.o
 .PHONY : main.o
 
@@ -249,54 +177,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/main.c.s
 .PHONY : main.c.s
 
-menu.o: menu.c.o
-.PHONY : menu.o
-
-# target to build an object file
-menu.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/menu.c.o
-.PHONY : menu.c.o
-
-menu.i: menu.c.i
-.PHONY : menu.i
-
-# target to preprocess a source file
-menu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/menu.c.i
-.PHONY : menu.c.i
-
-menu.s: menu.c.s
-.PHONY : menu.s
-
-# target to generate assembly for a file
-menu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/menu.c.s
-.PHONY : menu.c.s
-
-print.o: print.c.o
-.PHONY : print.o
-
-# target to build an object file
-print.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/print.c.o
-.PHONY : print.c.o
-
-print.i: print.c.i
-.PHONY : print.i
-
-# target to preprocess a source file
-print.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/print.c.i
-.PHONY : print.c.i
-
-print.s: print.c.s
-.PHONY : print.s
-
-# target to generate assembly for a file
-print.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/print.c.s
-.PHONY : print.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -309,24 +189,9 @@ help:
 	@echo "... customer.o"
 	@echo "... customer.i"
 	@echo "... customer.s"
-	@echo "... elastic.o"
-	@echo "... elastic.i"
-	@echo "... elastic.s"
-	@echo "... file.o"
-	@echo "... file.i"
-	@echo "... file.s"
-	@echo "... input.o"
-	@echo "... input.i"
-	@echo "... input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... menu.o"
-	@echo "... menu.i"
-	@echo "... menu.s"
-	@echo "... print.o"
-	@echo "... print.i"
-	@echo "... print.s"
 .PHONY : help
 
 

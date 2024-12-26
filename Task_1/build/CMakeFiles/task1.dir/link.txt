@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/task1.dir/customer.c.o CMakeFiles/task1.dir/file.c.o CMakeFiles/task1.dir/input.c.o CMakeFiles/task1.dir/main.c.o CMakeFiles/task1.dir/menu.c.o CMakeFiles/task1.dir/print.c.o CMakeFiles/task1.dir/elastic.c.o -o task1  /usr/lib/x86_64-linux-gnu/libcurl.so -ljson-c 
+/usr/bin/cc -g CMakeFiles/task1.dir/customer.c.o CMakeFiles/task1.dir/main.c.o -o task1  -luuid -lcurl -ljson-c 

@@ -35,6 +35,9 @@
   },
   "mappings": {
     "properties": {
+      "uuid": {
+        "type": "keyword"
+      },
       "name": {
         "type": "text",
         "analyzer": "custom_index_analyzer",
@@ -54,9 +57,7 @@
         "type": "integer"
       },
       "age": {
-        "type": "text", 
-        "analyzer": "custom_index_analyzer",
-        "search_analyzer": "custom_search_analyzer"
+        "type": "integer"
       },
       "address": {
         "type": "text",
@@ -64,9 +65,7 @@
         "search_analyzer": "custom_search_analyzer"
       },
       "discount": {
-        "type": "text", 
-        "analyzer": "custom_index_analyzer",
-        "search_analyzer": "custom_search_analyzer"
+        "type": "float"
       },
       "is_float": {
         "type": "integer"
@@ -74,5 +73,9 @@
     }
   }
 }
+
+
+
+
 
 

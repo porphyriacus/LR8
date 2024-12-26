@@ -4,6 +4,7 @@
 #include <curl/curl.h>
 #include <json-c/json.h>
 #include "header.h"
+#include <ctype.h>
 
 int main()
 {
@@ -11,12 +12,11 @@ int main()
     if (file == NULL)
     {
         printf("Ошибка открытия файла. Файл может не существовать или произошла другая ошибка.\n");
-        return 1;
     }
 
     int numb = 0;
     RegCustomers *list = readAllCustomersFromFile("file.bin", &numb);
-        if (list == NULL)
+    if (list == NULL)
     {
         printf("Oшибка открытия файла.\n");
     }
@@ -42,9 +42,13 @@ int main()
         switch (status)
         {
         case 1:
-            if (remove("file.bin") != 0)
+
+            // deleteAllCustomers();
+            file = fopen("file.bin", "wb");
+            if (file == NULL)
             {
-                printf("Ошибка удаления исходного файла.\n");
+                printf("Ошибка открытия файла для очистки.\n");
+                return 1;
             }
             else
             {
@@ -56,6 +60,7 @@ int main()
                     printf("Ошибка создания файла.\n");
                     return 1;
                 }
+
                 list = createArray(file, numb);
             }
 
@@ -104,24 +109,17 @@ int main()
             break;
 
         case 4:
+
+            
             // Загрузка всех клиентов на сервер
             uploadAllCustomers(list, numb);
-            const char *field = chooseField();
-            // Пример использования обновленной функции поиска
-            printf("Введите запрос для поиска клиентов: ");
-            char query[256];
+            char query[1024];
+            printf("Введите поисковый запрос: ");
             scanf("%s", query);
-            if (field != NULL)
-            {
-                searchInElasticSearch(field, query);
-            }
+            searchInElasticSearch(query);
 
             // Удаление всех клиентов с сервера
             deleteAllCustomers();
-
-            printf("Хотите завершить программу? Введите 1, если хотите завершить программу, 2, если хотите продолжить\t");
-            st = input(0, 3);
-            
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
@@ -132,6 +130,7 @@ int main()
             break;
 
         case 5:
+            
             printf("Список покупателей по фамилиям:\n");
             for (int i = 0; i < numb; ++i)
             {
@@ -140,24 +139,91 @@ int main()
             printf("Введите индекс клиента для удаления: ");
             int index = input(0, numb + 1);
             file = fopen("file.bin", "rb+");
-            if (file == NULL)
-            {
-                printf("Ошибка открытия файла.\n");
-                return 1;
-            }
             list = removeCustomer(file, list, &numb, index - 1);
             fclose(file);
-            printf("Хотите завершить программу? Введите 1, если хотите завершить программу, 2, если хотите продолжить\t");
-            st = input(0, 3);
-            if (st == 1)
-            {
-                printf("Всего хорошего!:3\n");
-                free(list);
-                list = NULL;
-                return 0;
-            }
-            break;
 
+            /*
+             FILE* file = fopen("file.bin", "rb+");
+             char query[100];
+             int field_choice;
+             // Меню выбора поля для поиска
+             printf("Выберите поле для поиска:\n");
+             printf("1. Имя\n");
+             printf("2. Фамилия\n");
+             printf("3. Отчество\n");
+             printf("4. Пол\n");
+             printf("5. Возраст\n");
+             printf("6. Адрес\n");
+             printf("7. Скидка\n");
+             printf("Введите номер поля: ");
+             field_choice = input(0,8);
+             deleteAllCustomers();
+             // Назначение поля для поиска на основе выбора пользователя
+             const char *field;
+             switch (field_choice)
+             {
+             case 1:
+                 field = "name";
+                 break;
+             case 2:
+                 field = "surname";
+                 break;
+             case 3:
+                 field = "fathername";
+                 break;
+             case 4:
+                 field = "sex";
+                 break;
+             case 5:
+                 field = "age";
+                 break;
+             case 6:
+                 field = "address";
+                 break;
+             case 7:
+                 field = "discount";
+                 break;
+             default:
+                 printf("Неверный выбор поля.\n");
+                 return 1;
+             }
+
+             printf("Введите значение для поиска: ");
+             scanf("%99s", query);
+
+             char uuids[10][37]; // Массив для хранения UUID (максимум 10 UUID)
+             int found_uuids = searchDocumentUUIDs(field, query, uuids, 10);
+
+             if (found_uuids > 0)
+             {
+                 printf("Найдено клиентов: %d\n", found_uuids);
+
+                 // Удаление найденных клиентов из массива и файла
+                 for (int i = 0; i < found_uuids; i++)
+                 {
+                     list = removeCustomerByUUID(file, list, &numb, uuids[i]);
+                 }
+
+                 printf("Клиенты удалены.\n");
+             }
+             else
+             {
+                 printf("Клиенты не найдены.\n");
+             }
+            */
+             printf("Хотите завершить программу? Введите 1, если хотите завершить программу, 2, если хотите продолжить\t");
+             int st = input(0,3);
+             uploadAllCustomers(list, numb);
+             if (st == 1)
+             {
+                 printf("Всего хорошего!:3\n");
+                 free(list);
+                 list = NULL;
+                 return 0;
+             }
+
+             break;
+             
         case 6:
             file = fopen("file.bin", "rb+");
             if (file == NULL)
@@ -176,6 +242,7 @@ int main()
             fclose(file);
             printf("Хотите завершить программу? Введите 1, если хотите завершить программу, 2, если хотите продолжить\t");
             st = input(0, 3);
+            // uploadAllCustomers(list, numb);
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
@@ -183,6 +250,7 @@ int main()
                 list = NULL;
                 return 0;
             }
+
             break;
 
         case 7:
