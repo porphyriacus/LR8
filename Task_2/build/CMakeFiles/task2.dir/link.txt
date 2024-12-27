@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/task2.dir/call.c.o CMakeFiles/task2.dir/elestic.c.o CMakeFiles/task2.dir/file.c.o CMakeFiles/task2.dir/input.c.o CMakeFiles/task2.dir/main.c.o CMakeFiles/task2.dir/menu.c.o CMakeFiles/task2.dir/print.c.o -o task2  /usr/lib/x86_64-linux-gnu/libcurl.so -ljson-c 
+/usr/bin/cc -g CMakeFiles/task2.dir/call.c.o CMakeFiles/task2.dir/main.c.o -o task2  /usr/lib/x86_64-linux-gnu/libcurl.so -ljson-c 

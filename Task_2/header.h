@@ -1,10 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <stdio.h>
-#include <string.h>
-
-
 typedef union {
     int intV;
     float floatV;
@@ -29,6 +25,7 @@ calls *removeCall(const char *, calls *, int *, int);
 void modifyCalls(const char *, calls *, int);
 calls *createArray(const char *, int);
 void calculateTotals(calls*, int);
+void fre(calls*);
 void removeByField(calls **callList, int *size);
 
 void File_Enter(const char *, calls *, int);

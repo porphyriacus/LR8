@@ -1,8 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <curl/curl.h>
-#include <json-c/json.h>
+
 #include "header.h"
 
 int main()
@@ -46,7 +43,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -59,7 +56,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -72,7 +69,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -96,7 +93,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -119,7 +116,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -132,7 +129,7 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
@@ -145,14 +142,14 @@ int main()
             if (st == 1)
             {
                 printf("Всего хорошего!:3\n");
-                free(call);
+                fre(call);
                 call = NULL;
                 return 0;
             }
             break;
         case 8:
             printf("Всего хорошего!:3\n");
-            free(call);
+            fre(call);
             call = NULL;
             return 0;
         }

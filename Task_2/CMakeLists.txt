@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(task2 VERSION 0.1.0 LANGUAGES C)
 
-add_executable(task2 call.c elestic.c file.c input.c main.c menu.c print.c)
+add_executable(task2 call.c main.c)
 
 # Добавьте библиотеку libcurl
 find_package(CURL REQUIRED)

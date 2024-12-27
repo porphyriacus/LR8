@@ -81,12 +81,12 @@ clean: CMakeFiles/task2.dir/clean
 CMakeFiles/task2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target task2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles --progress-num=1,2,3 "Built target task2"
 .PHONY : CMakeFiles/task2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/task2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/task2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build/CMakeFiles 0
 .PHONY : CMakeFiles/task2.dir/rule

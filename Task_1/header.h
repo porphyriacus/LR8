@@ -49,5 +49,5 @@ void deleteAllCustomers();
 void searchInElasticSearch(const char *);
 void uploadAllCustomers(RegCustomers *, int);
 void RegCustomersToJson(RegCustomers *, char *);
-
+void fre(RegCustomers*);
 #endif 

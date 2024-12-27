@@ -983,9 +983,7 @@ void deleteAllCustomers() {
 
     curl_global_cleanup();
 }
-#include <ctype.h>
-#include <ctype.h>
-#include <ctype.h>
+
 
 int is_numeric_query(const char *query) {
     while (*query) {
@@ -1145,4 +1143,8 @@ void RegCustomersToJson(RegCustomers *customer, char *jsonBuffer) {
     snprintf(jsonBuffer, BUFFER_SIZE, 
         "{\"uuid\":\"%s\",\"name\":\"%s\",\"surname\":\"%s\",\"fathername\":\"%s\",\"sex\":%d,\"age\":%d,\"address\":\"%s\",\"discount\":%.2f}", 
         customer->uuid, customer->name, customer->surname, customer->fathername, customer->sex, customer->age, customer->address, discountValue);
+}
+
+void fre(RegCustomers* call){
+    free(call);
 }

@@ -6,32 +6,7 @@
 },
 {
   "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
-  "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/elestic.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/elestic.c",
-  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/elestic.c"
-},
-{
-  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
-  "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/file.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/file.c",
-  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/file.c"
-},
-{
-  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
-  "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/input.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/input.c",
-  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/input.c"
-},
-{
-  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
   "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/main.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/main.c",
   "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/main.c"
-},
-{
-  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
-  "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/menu.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/menu.c",
-  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/menu.c"
-},
-{
-  "directory": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/build",
-  "command": "/usr/bin/cc  -I/usr/include/json-c -g -o CMakeFiles/task2.dir/print.c.o -c /home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/print.c",
-  "file": "/home/porphyriacus/Documents/453502/ОАиП/LR8/Task_2/print.c"
 }
 ]
